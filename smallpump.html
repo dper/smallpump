@@ -1,10 +1,34 @@
 <html>
-
+<head>
+	<meta charset="utf-8" />
+</head>
 <body>
 <p>This page displays a box showing recent pump.io activity.</p>
+<p id="feed">My feed.</p>
 
-<!-- This script displays the pump.io activity. -->
-<script src="smallpump.js"></script>
+<!-- This loads jQuery, our JSON parser. http://jquery.com/ -->
+<script src="jquery-1.10.2.js"></script>
+
+<!-- This displays the pump.io activity. -->
+<script>
+var itemsToShow = 3;
+
+$.getJSON('example_feed.json', function(data) {
+	text = "<hr />\n";
+	items = data.items;
+
+	// Display the three most recent items.
+	items = items.slice(0, 3);
+	
+	for (var i in items) {
+		item = items[i];
+		text += item.object.content;
+		text += "<hr />\n";
+	}
+
+	document.getElementById("feed").innerHTML = text;
+});
+</script>
 
 </body>
 </html>
