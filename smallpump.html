@@ -3,7 +3,8 @@
 	<meta charset="utf-8" />
 </head>
 <body>
-<p>This page displays a box showing recent pump.io activity.</p>
+
+<!-- This is rewritten by the script. -->
 <p id="feed">My feed.</p>
 
 <!-- This loads jQuery, our JSON parser. http://jquery.com/ -->
@@ -14,8 +15,19 @@
 itemsToShow = 3;
 
 $.getJSON('example_feed.json', function(data) {
-	text = "<hr />\n";
+	text = "";
 	items = data.items;
+
+	// Show some information about the publisher.
+	publisher = data.author.preferredUsername;
+	url = data.author.url;
+	urlText = "<a href=\"" + url + "\">" + url + "</a>";
+	text += "<p style=\"text-align: center;\">";
+	text += "<b>The most recent three posts by " + publisher + ".</b><br />\n";
+	text += urlText + "\n";
+	text += "</p>\n";
+
+	text += "<hr />\n";
 
 	// Display the three most recent items.
 	items = items.slice(0, 3);
