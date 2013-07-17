@@ -11,7 +11,7 @@
 
 <!-- This displays the pump.io activity. -->
 <script>
-var itemsToShow = 3;
+itemsToShow = 3;
 
 $.getJSON('example_feed.json', function(data) {
 	text = "<hr />\n";
@@ -20,9 +20,17 @@ $.getJSON('example_feed.json', function(data) {
 	// Display the three most recent items.
 	items = items.slice(0, 3);
 	
-	for (var i in items) {
+	for (i in items) {
 		item = items[i];
-		text += item.object.content;
+
+		// Show the published date above.
+		published = item.object.published;
+		itemDate = published.slice(0,4) + "-" + published.slice(5,7);
+		itemDate += "-" + published.slice(8,10) + " &nbsp; " + published.slice(11,16);
+		text += "<p style=\"text-align: center;\">" + itemDate + "</p>\n";
+
+		// Show the content below.
+		text += "<p>" + item.object.content + "</p>\n";
 		text += "<hr />\n";
 	}
 
