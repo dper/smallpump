@@ -14,6 +14,9 @@
 <script>
 itemsToShow = 3;
 
+// To work, this file relies on a JSON file of the user's recent activity.
+// For a given pump.io, a user's feed is at /api/user/<nickname>/feed/major.
+
 $.getJSON('feed.user.json', function(data) {
 	text = "";
 	items = data.items;
@@ -49,6 +52,5 @@ $.getJSON('feed.user.json', function(data) {
 	document.getElementById("feed").innerHTML = text;
 });
 </script>
-
 </body>
 </html>
