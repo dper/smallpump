@@ -4,7 +4,6 @@
 </head>
 <body>
 
-<!-- Description. -->
 <h4>Description</h4>
 
 <p>This script, a part of <b>smallpump</b>, takes a Firehose JSON feed and renders the output in a simple but easy to read format.  If a user is playing around with pump.io and looking to see who else is out there, this script could be of some use.  The formatting done here is quite minimal.  Anyone with basic knowledge of JavaScript, HTML, and CSS could easily modify this script according to their desires.  A current version of this code can be found at the project page: <a href="https://github.com/dper/smallpump">https://github.com/dper/smallpump</a>.</p>
@@ -18,12 +17,12 @@
 <!-- This displays the pump.io activity. -->
 <script>
 
-// This code is in testing now.  To use it, manually download the feed.
-// Open the following URL in your browser and save it as a file in the
-// same directory as this file.
+// To use this code as-is, you need to download a firehose file.
+// The default firehose feed: https://ofirehose.com/feed.json.
+
 url = "https://ofirehose.com/feed.json";
 
-$.getJSON('ofirehose.feed.json', function(data) {
+$.getJSON('feed.ofirehose.json', function(data) {
 	text = "";
 	items = data.items;
 
@@ -61,6 +60,5 @@ $.getJSON('ofirehose.feed.json', function(data) {
 	document.getElementById("feed").innerHTML = text;
 });
 </script>
-
 </body>
 </html>
