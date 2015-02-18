@@ -16,4 +16,22 @@ These files depend on JSON feed files.  To make these files at all useful, the J
 
 Accessing a user's feed requires OAuth, it seems, so whatever solution is chosen will need to take that into account.  The main OFirehose server does not require OAuth.
 
-The JSON is parsed using jQuery, which is available under the MIT License.  See the jQuery website.  http://jquery.org/license
+The JSON is parsed using jQuery, which is available under the MIT License.  See the [jQuery](http://jquery.org/license) website.  
+
+
+Source
+======
+
+* Browse: <https://dperkins.org/git/gitlist/smallpump.git/>.
+* Clone: <https://dperkins.org/git/public/smallpump.git/>.
+* GitHub: <https://github.com/dper/smallpump/>.
+
+
+Contact
+=======
+
+If you want to contact the author, here are some ways.  Bug reports and improvements are always welcome.
+
+* <https://microca.st/dper>
+* <https://twitter.com/dpp0>
+* <https://dperkins.org/tag/contact.html>
